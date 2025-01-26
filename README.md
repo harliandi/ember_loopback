@@ -1,51 +1,54 @@
-# frontend
+# Team Management App
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+A modern web application built with Ember.js for managing teams and their members. Features include:
 
-## Prerequisites
+- Team creation/editing
+- Member management within teams
+- Interactive UI with form validation
+- Real-time updates
+- Responsive design
 
-You will need the following things properly installed on your computer.
+## 🚀 Quick Start
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/) (with npm)
-* [Ember CLI](https://ember-cli.com/)
-* [Google Chrome](https://google.com/chrome/)
+### Prerequisites
+- Node.js v18+
+- npm v9+
+- Ember CLI v5.3+
+- Git
 
-## Installation
+```bash
+# Clone repository
+git clone https://github.com/harliandi/ember_loopback.git
+cd ember_loopback
 
-* `git clone <repository-url>` this repository
-* `cd frontend`
-* `npm install`
+# Install dependencies
+npm install
 
-## Running / Development
+# Start development server
+ember serve
+```
+## Production Deployment 🚀
+Netlify Deployment
+1. Prepare Production Build
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-* Visit your tests at [http://localhost:4200/tests](http://localhost:4200/tests).
+```bash
+ember build --environment=production
+```
+2. Install Netlify CLI
+```bash
+npm install -g netlify-cli
+```
 
-### Code Generators
+3. Deploy to Netlify
 
-Make use of the many generators for code, try `ember help generate` for more details
+```bash
+netlify login
+netlify deploy --prod
+```
+- Select "Create & configure a new site"
+- Set publish directory to dist
+- Build command: ``ember build --environment=production``
 
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Linting
-
-* `npm run lint`
-* `npm run lint:fix`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
