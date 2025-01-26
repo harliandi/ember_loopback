@@ -1,0 +1,12 @@
+<div class="form-container">
+  <div class="header">
+    <h1>Edit Member from {{this.model.team.name}}</h1>
+  </div>
+
+  <MemberForm
+    @team={{this.model.team}}
+    @model={{this.model.member}}
+    @onSubmit={{this.saveMember}}
+    @onCancel={{this.handleCancel}}
+  />
+</div>

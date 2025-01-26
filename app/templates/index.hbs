@@ -1,0 +1,39 @@
+<div class="teams-container">
+  <div class="header">
+    <h1>Teams</h1>
+    <LinkTo @route="team.new" class="add-button">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      Add Team
+    </LinkTo>
+  </div>
+
+  <div class="team-grid">
+    {{#each this.model as |team|}}
+      <div class="team-card">
+        <div class="card-actions">
+          <LinkTo @route="team.edit" @model={{team}} class="icon-button edit-button">
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+            </svg>
+          </LinkTo>
+          <button type="button" class="icon-button delete-button" {{on "click" (fn this.deleteTeam team)}}>
+            <svg viewBox="0 0 24 24" width="16" height="16">
+              <path fill="currentColor" d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/>
+            </svg>
+          </button>
+        </div>
+        <LinkTo @route="team" @model={{team.id}} class="card-content">
+          <h2 class="team-name">{{team.name}}</h2>
+          <p class="team-description">{{team.description}}</p>
+        </LinkTo>
+      </div>
+    {{else}}
+      <div class="no-teams">
+        <p>No teams found.</p>
+      </div>
+    {{/each}}
+  </div>
+</div>

@@ -18,6 +18,7 @@ module.exports = function (environment) {
     },
 
     APP: {
+      apiHost: process.env.API_HOST || 'http://localhost:3000',
       // Here you can pass flags/options to your application instance
       // when it is created
     },
@@ -44,6 +45,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
+    ENV.APP.apiHost = 'https://loopback-621010042753.asia-southeast2.run.app';
     // here you can enable a production-specific feature
   }
 

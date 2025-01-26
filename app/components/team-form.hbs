@@ -1,0 +1,37 @@
+<div class="form-container">
+  <div class="header">
+    <h1>{{if @model.id "Edit Team" "Create New Team"}}</h1>
+    <button type="button" class="cancel-button" {{on "click" this.handleCancel}}>
+      Cancel
+    </button>
+  </div>
+
+  <form {{on "submit" this.handleSubmit}} class="team-form">
+    <div class="form-group">
+      <label class="form-label">Team Name</label>
+      <Input
+        @type="text"
+        @value={{@model.name}}
+        class="form-input"
+        placeholder="Enter team name"
+        required
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="form-label">Description</label>
+      <Input
+        @type="text"
+        @value={{@model.description}}
+        class="form-input"
+        placeholder="Add a brief description"
+      />
+    </div>
+
+    <div class="form-actions">
+      <button type="submit" class="submit-button">
+        {{if @model.id "Update Team" "Save Team"}}
+      </button>
+    </div>
+  </form>
+</div>
